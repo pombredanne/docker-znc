@@ -1,4 +1,4 @@
-# semente/znc
+# SEMENTE/ZNC CONTAINER
 
 ## Setup & Run
 
