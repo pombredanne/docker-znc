@@ -1,12 +1,12 @@
 To build a image:
 
-    # docker build -t semente/znc .
+    docker build -t semente/znc .
 
 First setup:
 
-   # mkdir -p /srv/data/znc
-   # docker run -ti -v /srv/data/znc:/data semente/znc --makepem
-   # docker run -ti -v /srv/data/znc:/data semente/znc --makeconf
+    mkdir -p /srv/data/znc
+    docker run -ti -v /srv/data/znc:/data semente/znc --makepem
+    docker run -ti -v /srv/data/znc:/data semente/znc --makeconf
 
 To run (detached):
 
