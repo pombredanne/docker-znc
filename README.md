@@ -1,7 +1,3 @@
-To build a image:
-
-    docker build -t semente/znc .
-
 First setup:
 
     mkdir -p /srv/data/znc
