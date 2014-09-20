@@ -1,5 +1,5 @@
 FROM debian:jessie
-MAINTAINER Guilherme Gondim <guilheme@semente.io>
+MAINTAINER Guilherme Gondim
 
 VOLUME ["/data"]
 EXPOSE 6667
