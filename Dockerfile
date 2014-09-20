@@ -1,12 +1,16 @@
 FROM debian:jessie
 MAINTAINER Guilherme Gondim
 
-VOLUME ["/data"]
-EXPOSE 6667
-
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update -q
 RUN apt-get install -yq znc
 
-ENTRYPOINT ["/usr/bin/znc", "--datadir", "/data", "--allow-root", "--foreground"]
+RUN useradd --no-create-home --home-dir /nonexistent --uid 1000 --user-group znc
+
+RUN mkdir /data
+RUN chown 1000.1000 /data
+VOLUME /data
+
+USER znc
+ENTRYPOINT ["/usr/bin/znc", "--datadir", "/data", "--foreground"]
