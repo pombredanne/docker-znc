@@ -1,10 +1,10 @@
-FROM semente/debian-jessie
+FROM debian:jessie
 MAINTAINER Guilherme Gondim
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN aptitude update -q
-RUN aptitude install -y znc
+RUN apt-get update
+RUN apt-get install -y znc
 
 RUN useradd --no-create-home --home-dir /nonexistent --uid 1000 --user-group znc
 
