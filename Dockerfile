@@ -3,8 +3,10 @@ MAINTAINER Guilherme Gondim
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update
-RUN apt-get install -y znc
+RUN apt-get update \
+    && apt-get install -y znc \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN useradd --user-group --create-home --home-dir /data znc
 
