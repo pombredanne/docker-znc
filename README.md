@@ -4,13 +4,13 @@
 
 To setup (using a Data Volume Container):
 
-    docker run --name data-znc -v /data -ti semente/znc --help
-    docker run --volumes-from data-znc -ti semente/znc --makepem
-    docker run --volumes-from data-znc -ti semente/znc --makeconf
+    docker run --name znc-data -v /data -ti semente/znc --version
+    docker run --volumes-from znc-data -ti semente/znc --makepem
+    docker run --volumes-from znc-data -ti semente/znc --makeconf
 
 To run:
 
-    docker run -d -p 6667:6667 --volumes-from data-znc semente/znc
+    docker run -d -p 6667:6667 --volumes-from znc-data semente/znc
 
 **Note**: change ports to your choices
 
