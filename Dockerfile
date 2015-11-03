@@ -10,6 +10,9 @@ RUN apt-get update \
 
 RUN useradd --user-group --create-home --home-dir /data znc
 
+EXPOSE 6667
+EXPOSE 6697
+
 VOLUME /data
 
 USER znc
