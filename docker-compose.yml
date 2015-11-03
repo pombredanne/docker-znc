@@ -1,0 +1,11 @@
+data:
+  build: .
+  command: --version
+
+znc:
+  build: .
+  volumes_from:
+    - data
+  ports:
+    - 6697:6697
+  restart: always
