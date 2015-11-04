@@ -27,4 +27,4 @@ EXPOSE 6697
 VOLUME /data
 
 USER znc
-ENTRYPOINT ["/usr/bin/znc", "--datadir", "/data", "--foreground"]
+ENTRYPOINT ["/usr/local/bin/znc", "--datadir", "/data", "--foreground"]
