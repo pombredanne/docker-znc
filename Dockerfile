@@ -7,6 +7,7 @@ ENV ZNC_VERSION 1.6.1
 RUN apt-get update \
     && apt-get install -y build-essential pkg-config swig3.0 wget \
                           libicu-dev libperl-dev libssl-dev \
+                          ca-certificates \
     && cd /usr/local/src \
     && wget -O znc.tar.gz "http://znc.in/releases/archive/znc-${ZNC_VERSION}.tar.gz" \
     && tar -xzf znc.tar.gz \
@@ -14,7 +15,8 @@ RUN apt-get update \
     && ./configure \
     && make \
     && make install \
-    && apt-get remove -y wget \
+    && apt-get remove -y build-essential pkg-config swig3.0 wget \
+                         libicu-dev libperl-dev libssl-dev \
     && apt-get autoremove -y \
     && apt-get clean \
     && rm -rf /usr/local/src/* /var/lib/apt/lists/* /tmp/* /var/tmp/*
